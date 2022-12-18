@@ -16,14 +16,15 @@ export class PersonService {
 
   constructor(private httpClient:HttpClient) 
   { 
-
+        if(this.apiUrl == null || this.apiUrl == '')
+        {
+          this.apiUrl =  `http://${location.hostname}:3000/person`;
+        }
   }
 
   getPersonData() : any
   {
     this.httpClient.get(this.apiUrl).subscribe();
   }
-
-
 
 }
