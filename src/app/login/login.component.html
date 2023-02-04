@@ -18,7 +18,12 @@
 
     <br/>
 
-    <input class="form-control" type="text" name="name" [(ngModel)]="loginUser.name" />
+    <input class="form-control" type="text" name="name" [(ngModel)]="loginUser.name" 
+
+    #name="ngModel"
+    required
+    minlength="5"
+    />
 
     <br/>
 
@@ -27,5 +32,15 @@
     <br/>
 
     <input type="submit" name="loginSubmit" value="Login" />
+
+
+    {{name.errors?.['minlength'].requiredLength}}
+    <br/>
+    {{name.value}}
+    <br/>
+    {{name.invalid}}
+    <br/>
+    {{name.errors?.['minlength'].actualLength}}
+
 
 </form>
