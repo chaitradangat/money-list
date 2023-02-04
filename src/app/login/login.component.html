@@ -8,3 +8,24 @@
     <div></div>
     <input type="submit" name="submit" id="submit" value="Submit">
 </div>
+
+<!--Another way to create using angular forms-->
+<br/>
+
+<form id="frmLogin" name="frmLogin" (ngSubmit)="doLogin(loginUser)">
+
+    {{ loginUser.name }} {{ loginUser.password }}
+
+    <br/>
+
+    <input class="form-control" type="text" name="name" [(ngModel)]="loginUser.name" />
+
+    <br/>
+
+    <input class = "form-control" type="password" name="password" [(ngModel)]="loginUser.password" />
+
+    <br/>
+
+    <input type="submit" name="loginSubmit" value="Login" />
+
+</form>
